@@ -1,16 +1,7 @@
 import express from 'express';
-
+import routes from './rotas'
 const app = express();
-
-app.get('/users', (request, response) => {
-    response.json(
-        [
-            'Diego',
-            'Mario',
-            'Carlos',
-            'Daniel',
-            'Maria'
-        ]);
-});
+app.use(express.json())
+app.use(routes);
 
 app.listen(3333)
